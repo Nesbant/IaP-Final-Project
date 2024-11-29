@@ -1,0 +1,2 @@
+75755|Nvia GFX|accesorio|YES|101
+66540|Redmi 2a|celular|NO|579
