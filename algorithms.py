@@ -1,5 +1,4 @@
 def bubble_sort(sales):
-    """Sorts sales by total amount using bubble sort."""
     n = len(sales)
     for i in range(n):
         for j in range(0, n - i - 1):
@@ -11,7 +10,6 @@ def bubble_sort(sales):
 
 
 def quicksort(sales):
-    """Sorts sales by sale number using quicksort."""
     if len(sales) <= 1:
         return sales
     pivot = int(sales[0].split("|")[0])
@@ -21,7 +19,6 @@ def quicksort(sales):
 
 
 def binary_search(sales, target):
-    """Finds a sale by its sale number using binary search."""
     low, high = 0, len(sales) - 1
     while low <= high:
         mid = (low + high) // 2

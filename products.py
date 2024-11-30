@@ -14,10 +14,10 @@ def generate_price(product_type):
     else:
         raise ValueError("El tipo de producto no es valido.")
     
-def register_product(description, product_type, tax_benefit):
+def register_product(description, product_type, igv):
     code = generate_id()
     price = generate_price(product_type)
-    line = f"{code}|{description}|{product_type}|{tax_benefit}|{price}"
+    line = f"{code}|{description}|{product_type}|{igv}|{price}"
     save_line("data/products.txt", line)
     return line
 

@@ -1,7 +1,6 @@
 import matplotlib.pyplot as plt
 
 def sales_by_product_chart(sales):
-    """Generates a bar chart of sales by product."""
     product_totals = {}
     for sale in sales:
         _, product_code, _, _, _, total = sale.split("|")

@@ -5,10 +5,8 @@ from algorithms import bubble_sort, quicksort, binary_search
 from charts import sales_by_product_chart
 from persistence import read_file
 
-# Título principal
 st.title("Productos Electrónicos")
 
-# Sidebar para opciones
 selected_option = st.sidebar.radio(
     "Opciones",
     [
@@ -30,10 +28,10 @@ if selected_option == "Registrar Producto":
     with st.form("product_form"):
         description = st.text_input("Descripción")
         product_type = st.selectbox("Tipo de Producto", ["computadora", "celular", "accesorio"])
-        tax_benefit = st.radio("IGV", ["YES", "NO"])
+        igv_benefit = st.radio("IGV", ["SI", "NO"])
         submitted = st.form_submit_button("Registrar Producto")
         if submitted:
-            product = register_product(description, product_type, tax_benefit)
+            product = register_product(description, product_type, igv_benefit)
             st.success(f"Producto Registrado: {product}")
 
 elif selected_option == "Registrar Venta":
@@ -43,10 +41,10 @@ elif selected_option == "Registrar Venta":
         description = st.text_input("Descripción del Producto")
         quantity = st.number_input("Cantidad", min_value=1, max_value=10, step=1)
         price = st.number_input("Precio", min_value=0.0, format="%.2f")
-        tax_benefit = st.radio("IGV", ["YES", "NO"])
+        igv_benefit = st.radio("IGV", ["SI", "NO"])
         submitted_sale = st.form_submit_button("Registrar Venta")
         if submitted_sale:
-            sale = register_sale(product_code, description, quantity, price, tax_benefit)
+            sale = register_sale(product_code, description, quantity, price, igv_benefit)
             st.success(f"Venta Registrada: {sale}")
 
 elif selected_option == "Ver Productos":
